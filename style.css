@@ -1,0 +1,17 @@
+body {
+    background-color: rgba(232, 232, 232, 0.6);
+    font-family: Helvetica, sans-serif;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    height: 100%;
+}
+
+ul {
+    display: table;
+    margin: 1% auto;
+}
+
+.list-group, .nav-pills {
+    border: solid;
+    border-width: 1px;
+}
+
