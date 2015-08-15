@@ -26,18 +26,6 @@ $(document).ready(function () {
     var urls = users.map(function (el) {
         return 'https://api.twitch.tv/kraken/streams/' + el + '?callback=?';
     });
-    /* var m = [];
-     var aj = urls.forEach(function (url) {
-     $.getJSON(url).done(function (data) {
-     //console.log(data);
-
-     }).then(function (data) {
-     m.push(data.stream);
-     })
-     });
-     $.when(aj).then(function(d){
-     console.log(m);
-     })*/
 
     var requests = [];
 
