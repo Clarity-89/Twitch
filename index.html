@@ -10,23 +10,27 @@
 <body>
 <div class="container" id="cont">
 
-    <ul id="main-menu">
-        <ul class="nav nav-pills">
+    <div class="list-group">
+        <ul class="nav nav-pills nav-justified">
             <li role="presentation" class="active"><a href="#">All</a></li>
             <li role="presentation"><a href="#">Offline</a></li>
             <li role="presentation"><a href="#">Online</a></li>
         </ul>
-        <div class="list-group">
-            <script id="users" type="text/x-handlebars-template">
+        <div class="template">
+            <div class="loading">
+                <div id="load_txt"><h3>Getting the data...</h3></div>
+            </div>
 
-                {{#each channels}}
-                <a target="_blank" href="{{link}}" class="list-group-item">{{name}}</a>
-                {{/each}}
-
-            </script>
         </div>
-    </ul>
+    </div>
 </div>
+<script id="users" type="text/x-handlebars-template">
+    {{#each channels}}
+    <a target="_blank" href="{{link}}" class="list-group-item"><img class="ava" src="{{avatar}}">   {{name}} <span
+            id="icon" class="glyphicon glyphicon-{{online}}"></span> <br> <span id="status">{{streaming}}</span></a>
+    {{/each}}
+
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="app.js"></script>

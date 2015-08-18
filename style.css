@@ -1,17 +1,77 @@
 body {
-    background-color: rgba(232, 232, 232, 0.6);
-    font-family: Helvetica, sans-serif;
+    background-color: rgba(192, 192, 192, 0.6);
+
     text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
     height: 100%;
 }
 
-ul {
+/*ul, #main-menu {
     display: table;
     margin: 1% auto;
-}
-
-.list-group, .nav-pills {
+}*/
+.list-group {
+    display: table;
+    margin: 1% auto;
     border: solid;
     border-width: 1px;
+    width: 25%;
+    color: black;
 }
 
+.nav-pills {
+    border-bottom: solid;
+    border-width: 1px;
+    background-color: white;
+}
+
+.ava {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.list-group-item a {
+    text-decoration: none;
+}
+
+.loading {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 9999;
+    border-bottom: solid;
+    border-width: 1px;
+    background: url('http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_7.gif') center no-repeat #fff;
+}
+
+#load_txt {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    color: black;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.glyphicon-ok {
+    color: green;
+}
+
+.glyphicon-remove {
+    color: red;
+}
+
+#status {
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: grey;
+}
+
+.glyphicon {
+    float: right;
+    margin-top: 4%;
+
+}

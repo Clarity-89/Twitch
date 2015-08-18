@@ -3,50 +3,86 @@
  */
 
 $(document).ready(function () {
-    var $list = $('.list-group-item').mouseover(function (e) {
-        e.preventDefault();
-        $list.removeClass('active');
-
-        $(this).addClass('active');
-
-    }).mouseout(function (e) {
-        $(this).removeClass('active');
-    });
-
+    var active;
     var $nav = $('.nav-pills').children().click(function (e) {
+
         e.preventDefault();
         $nav.removeClass('active');
 
         $(this).addClass('active');
+        active = $('.nav').find('.active').text();
+        showData();
 
     });
 
+
+    // List of users that stream coding
     var users = ["FreeCodeCamp", "GeoffStorbeck", "terakilobyte", "habathcx", "RobotCaleb", "medrybw", "thomasballinger", "noobs2ninjas", "beohoff"];
+    var api = 'https://api.twitch.tv/kraken/';
 
-    var urls = users.map(function (el) {
-        return 'https://api.twitch.tv/kraken/streams/' + el + '?callback=?';
-    });
-
+    // Array to store submitted ajax requests
     var requests = [];
 
-    urls.forEach(function (el) {
-        // Submit the ajax request
-        requests.push($.getJSON(el, function (data) {
-            console.log('req submitted');
-        }))
-    });
-    // After all the data from the request is received, create a handlebars.js template
-    $.when.apply(null, requests).then(function (data) {
-        var source = $("#users").html();
-        var template = Handlebars.compile(source);
-        var channels = requests.map(function (el, i, arr) {
-            return {name: users[i], link: 'http://www.twitch.tv/' + users[i], online: el.responseJSON.stream};
-        });
-        var context = template({
-            channels: channels
-        });
-        $('.list-group').html(context);
-        console.log(context);
-    });
+    //Array to store the users' info
+    var usersList = [];
+    console.log($('.list-group').width())
+    function getData() {
 
+        users.forEach(function (el) {
+            var user = {};
+            // Collects users' urls and online state
+            var url = api + 'streams/' + el + '?callback=?';
+            requests.push($.getJSON(url).done(function (data) {
+                user.link = 'http://www.twitch.tv/' + el;
+                user.online = data.stream !== null ? 'ok' : 'remove';
+                user.streaming = data.stream !== null ? data.stream.channel.status : null;
+            }));
+            //Collect users' display names and logos
+            var url2 = api + 'users/' + el + '?callback=?';
+            requests.push($.getJSON(url2).done(function (data) {
+                //console.log(data);
+                user.name = data.display_name;
+                user.avatar = data.logo || 'http://www.cheapimpact.org/wp-content/uploads/2015/03/no-avatar-ff.png';
+
+            }));
+            //Push each user to the user's list
+            usersList.push(user);
+        });
+    }
+
+    getData();
+    function showData() {
+        $.when.apply(null, requests).done(function () {
+            //console.log(channels);
+            createTemplate('#users', usersList, '.template');
+            $(".loading").fadeOut("slow");
+        });
+    }
+
+
+    showData();
+
+
+    // Creating handlebars.js template
+    function createTemplate(input, data, output) {
+        var content;
+        if (active == 'Online') {
+            content = data.filter(function (el) {
+                return el.online == 'ok';
+            })
+        } else if (active == 'Offline') {
+            content = data.filter(function (el) {
+                return el.online == 'remove';
+            })
+        } else {
+            content = data;
+        }
+
+        var source = $(input).html();
+        var template = Handlebars.compile(source);
+        var context = template({
+            channels: content
+        });
+        $(output).html(context);
+    }
 });
