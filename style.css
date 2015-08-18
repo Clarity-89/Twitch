@@ -1,21 +1,16 @@
 body {
     background-color: rgba(192, 192, 192, 0.6);
-
     text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
     height: 100%;
 }
 
-/*ul, #main-menu {
-    display: table;
-    margin: 1% auto;
-}*/
 .list-group {
     display: table;
     margin: 1% auto;
-    border: solid;
-    border-width: 1px;
+    border: solid 1px;
     width: 25%;
     color: black;
+    table-layout: fixed;
 }
 
 .nav-pills {
@@ -42,8 +37,7 @@ body {
     bottom: 0;
     margin: auto;
     z-index: 9999;
-    border-bottom: solid;
-    border-width: 1px;
+    border-bottom: solid 1px;
     background: url('http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_7.gif') center no-repeat #fff;
 }
 
@@ -63,6 +57,7 @@ body {
 }
 
 #status {
+    display: block;
     font-size: 10px;
     white-space: nowrap;
     overflow: hidden;
@@ -73,5 +68,4 @@ body {
 .glyphicon {
     float: right;
     margin-top: 4%;
-
 }

@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     //Array to store the users' info
     var usersList = [];
-    console.log($('.list-group').width())
+
     function getData() {
 
         users.forEach(function (el) {
@@ -59,9 +59,7 @@ $(document).ready(function () {
         });
     }
 
-
     showData();
-
 
     // Creating handlebars.js template
     function createTemplate(input, data, output) {
