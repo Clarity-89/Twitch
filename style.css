@@ -86,7 +86,7 @@ body {
     }
     .nav-justified > li {
         display: table-cell;
-        width: 1%;
+        /*width: 1%;*/
     }
 
 }
