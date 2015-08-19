@@ -84,7 +84,7 @@ body {
     .nav-pills{
         display: inline;
     }
-    .nav-justified > li {
+    .nav > li {
         display: table-cell;
         width: 1%;
         height: 1%;
