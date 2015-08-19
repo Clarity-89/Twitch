@@ -76,3 +76,10 @@ body {
     width: 100%;
     text-align: center;
 }
+
+@media only screen and (max-device-width: 480px) {
+    .list-group {
+        width: 90%;
+
+    }
+}
