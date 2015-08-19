@@ -80,12 +80,11 @@ body {
 @media only screen and (max-device-width: 480px) {
     .list-group {
         width: 90%;
-
-    }
+     }
 
     .nav > li {
         display: table-cell;
-        width: 1%;
+       /* width: 1%;*/
 
     }
 
