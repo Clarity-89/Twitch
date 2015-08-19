@@ -82,9 +82,7 @@ body {
         width: 90%;
         margin: 0
     }
-    .nav-pills{
-        display: inline;
-    }
+
     .nav > li {
         display: table-cell;
         width: 1%;
