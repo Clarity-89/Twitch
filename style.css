@@ -80,6 +80,8 @@ body {
 @media only screen and (max-device-width: 480px) {
     .list-group {
         width: 90%;
+        max-height:100%;
+        overflow-y:scroll;
     }
 
     .nav > li {
