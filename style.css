@@ -70,7 +70,7 @@ body {
 }
 
 .footer {
-    position: relative;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -87,7 +87,7 @@ body {
     }
     .footer {
         position: absolute;
-        top: 100%;
+        top: 110%;
         left: 0;
         bottom: 0;
         width: 100%;
