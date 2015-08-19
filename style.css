@@ -7,15 +7,14 @@ body {
 .list-group {
     display: table;
     margin: 1% auto;
-    border: solid 1px;
+    border: solid 1px darkgray;
     width: 25%;
     color: black;
     table-layout: fixed;
 }
 
 .nav-pills {
-    border-bottom: solid;
-    border-width: 1px;
+    border-bottom: solid 1px darkgray;
     background-color: white;
 }
 
