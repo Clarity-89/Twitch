@@ -13,7 +13,7 @@ body {
 
 .list-group {
     display: table;
-    margin: 1% auto;
+    margin: 3% auto;
     border: solid 1px darkgray;
     width: 25%;
     color: black;
