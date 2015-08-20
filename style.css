@@ -94,6 +94,6 @@ body {
         width: 1%;
     }
     #cont {
-        height: auto;
+        min-height: 90%;
     }
 }
