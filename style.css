@@ -93,4 +93,7 @@ body {
         display: table-cell;
         width: 1%;
     }
+    #cont {
+        height: auto;
+    }
 }
