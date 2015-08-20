@@ -80,7 +80,6 @@ body {
 .footer {
     position: relative;
     left: 0;
-
     width: 100%;
     text-align: center;
 }
@@ -93,9 +92,5 @@ body {
     .nav > li {
         display: table-cell;
         width: 1%;
-    }
-
-    .footer {
-        position: relative;
     }
 }
