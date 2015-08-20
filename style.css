@@ -100,8 +100,4 @@ body {
         display: table-cell;
         width: 1%;
     }
-
-    #cont {
-        min-height: 50%;
-    }
 }
