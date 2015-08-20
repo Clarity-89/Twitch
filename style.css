@@ -80,7 +80,7 @@ body {
 .footer {
     position: relative;
     left: 0;
-    bottom: 0;
+
     width: 100%;
     text-align: center;
 }
@@ -95,12 +95,7 @@ body {
         width: 1%;
     }
 
-    /*.footer {
-        position: absolute;
-        top: 110%;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-    }*/
+    .footer {
+        position: relative;
+    }
 }
