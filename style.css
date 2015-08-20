@@ -1,3 +1,6 @@
+html {
+    height: 100%;
+}
 body {
     background-color: rgba(192, 192, 192, 0.6);
     text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
@@ -12,7 +15,9 @@ body {
     color: black;
     table-layout: fixed;
 }
-
+#cont {
+    height: 95%;
+}
 .nav-pills {
     border-bottom: solid 1px darkgray;
     background-color: white;
@@ -70,7 +75,7 @@ body {
 }
 
 .footer {
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
