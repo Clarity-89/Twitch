@@ -4,7 +4,7 @@ html {
 
 body {
     background-color: rgba(192, 192, 192, 0.6);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
     position: relative;
     margin: 0;
     padding-bottom: 6rem;
